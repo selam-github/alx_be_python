@@ -1,5 +1,3 @@
-current age=int(input("How old are you?"))
-future_year = int(input("Enter the future year to calculate your age: "))
-age_in_future_year = future_year - birth_year
-future_age = age_in_future_year + (future_year - current_year)
-print(f in the year {future_year}, you will be {future_age} years old.")
+current_age = int(input("How old are you? "))
+age_in_2050 = current_age + 27
+print(f"In 2050, you will be {age_in_2050} years old.")
