@@ -1,15 +1,15 @@
 #shopping_list_manager.py
-def main():
- shopping_list = []
-
+def display_menu():
+        print("Shopping List Manager")
+        print("1. Add Item")
+        print("2. Remove Item")
+        print("3. View List")
+        print("4. Exit")
+def main(): 
+   shopping_list = []
    while True:
-         print("\nShopping List Manager")
-         print("1. Add item")
-         print("2. Remove item")
-         print("3. View list")
-         print("4. Exit")
-
-  choice = input("Enter your choice (1-4): ")  # user select from the above condition      if choice == '1':
+        display_menu()
+        choice = input("Enter your choice (1-4): ") # select from the above condition      if choice == '1':
          item = input("Enter item to add: ")
          shopping_list.append(item)
          print(f"'{item}' has been added to the list.")
