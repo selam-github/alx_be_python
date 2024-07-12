@@ -1,7 +1,7 @@
 #main-0.py
 import sys
 from bank_account import BankAccount
-    def main():
+def main():
     if len(sys.argv) < 3:
         print("Usage: python main-0.py <operation> <amount>")
         sys.exit(1)
@@ -17,7 +17,7 @@ from bank_account import BankAccount
 
     if operation == 'deposit':
         account.deposit(amount)
-         print(f"Deposited: ${amount:.1f}")
+           print(f"Deposited: ${amount}")
     elif operation == 'withdraw':
         success = account.withdraw(amount)
         if success:
