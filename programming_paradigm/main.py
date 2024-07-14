@@ -1,16 +1,26 @@
 import sys
-from robust_division_calculator import safe_divide
 
-def main():
-    if len(sys.argv) != 3:
-        print("Usage: python main.py <numerator> <denominator>")
-        sys.exit(1)
-
-    numerator = sys.argv[1]
-    denominator = sys.argv[2]
-
-    result = safe_divide(numerator, denominator)
-    print(result)
+def divide(a, b):
+    try:
+        result = a / b
+    except ZeroDivisionError:
+        return "Error: Cannot divide by zero."
+    except ValueError:
+        return "Error: Invalid input. Please provide numbers."
+    return result
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) != 3:
+        print("Usage: python robust_division_calculator.py <numerator> <denominator>")
+        sys.exit(1)
+    
+    try:
+        numerator = float(sys.argv[1])
+        denominator = float(sys.argv[2])
+    except ValueError:
+        print("Error: Invalid input. Please provide numbers.")
+        sys.exit(1)
+    
+    result = divide(numerator, denominator)
+    print(result)
+
