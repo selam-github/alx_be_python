@@ -1,6 +1,6 @@
 #main.py
 from Book_class import BOOK
-  def main()
+def main()
   #creating instance of book
   my_book =Book(1984,"Georg Orwell",1949)
   # Demonstrating the __str__ method
