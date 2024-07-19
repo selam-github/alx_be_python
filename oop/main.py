@@ -8,6 +8,6 @@ def main():
   # Demonstrating the __repr__ method
   print(repr(my_book))
   # Deleting a book instance to trigger __del_
-   del my_book
+   del my_book(title)
   if __name__ == "__main__":
     main()
