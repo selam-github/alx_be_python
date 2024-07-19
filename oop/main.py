@@ -3,6 +3,7 @@ from book_class import Book
 def main():
   #creating instance of book
   my_book =Book(1984,"Georg Orwell",1949)
+  print( my_book)
   # Demonstrating the __str__ method
   print(__str__(my_book))
   # Demonstrating the __repr__ method
