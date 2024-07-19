@@ -1,5 +1,5 @@
 #main.py
-from Book_class import BOOK
+from book_class import BOOK
 def main():
   #creating instance of book
   my_book =Book(1984,"Georg Orwell",1949)
