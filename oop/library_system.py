@@ -23,10 +23,10 @@ class PrintBook(Book):
               # All the above script for inheritance
 #Composition - Library
 class Library:
-    def __init__(self,Book,EBook,PrintBook):
-        self.Book = Book
-        self.EBook = EBook
-        self.PrintBook = PrintBook
-    def add_book (self,Book,EBook,PrintBook):
-          return self.Book.append(),self.EBook.append(),self.PrintBook
+    def __init__(self):
+        self.books = []
+    def add_book (self,book):
+           self.books.append(book)
     def list_books(self):
+        for book in self.books
+        print(book)
