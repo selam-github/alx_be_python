@@ -12,9 +12,9 @@ class EBook(Book):
         super().__init__(title,author) #call the base class __init__ method
         self.file_size = file_size
     def __str__(self):
-        return f"EBook:{self.title} by {self.author},File Size:{self.file_size }"
+        return f"EBook:{self.title} by {self.author},File Size:{self.file_size }KB"
 class PrintBook(Book):
-    def __init__(self,page_count):
+    def __init__(self, title,author,page_count):
      super().__init__(title,author)
      self.page_count = page_count
      def __str__(self):
@@ -29,9 +29,10 @@ class Library:
         if isinstance(book, Book):
            self.books.append(book)
         else:
-            print("only instance books add")
+            print("only instance Book,EBookor printBoook canadded")
     def list_books(self):
-        if not self.books 
+        if not self.books:
         print(" no books in the library")
+        else:
         for book in self.books:
                print(book)
