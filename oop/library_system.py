@@ -1,10 +1,12 @@
 # library_system.py
+#Base Class - Book
 class Book:
     def __init__(self, title, author):
         self.title  = title
         self.author = author
     def __str__(self):
      return f"Book:{self.title} by {self.author}"
+ # Derived Classes - EBook and PrintBook
 class EBook(Book):
     def __init__(self,title,author,file_size):
         super().__init__(title,author) #call the base class __init__ method
@@ -17,3 +19,14 @@ class PrintBook(Book):
      self.page_count = page_count
      def __str__(self):
          return f"PrintBook: {self.title} by {self.author} ,Page Count: {self.page_count}"
+
+              # All the above script for inheritance
+#Composition - Library
+class Library:
+    def __init__(self,Book,EBook,PrintBook):
+        self.Book = Book
+        self.EBook = EBook
+        self.PrintBook = PrintBook
+    def add_book (self,Book,EBook,PrintBook):
+          return self.Book.append(),self.EBook.append(),self.PrintBook
+    def list_books(self):
