@@ -1,9 +1,12 @@
 # library_system.py
-#Base Class - Book
+# Base Class - Book
 class Book:
     def __init__(self, title, author):
         self.title = title
         self.author = author
+
+    def __str__(self):
+        return f"Title: {self.title}, Author: {self.author}"
 
 # Derived Class - EBook
 class EBook(Book):
@@ -11,11 +14,17 @@ class EBook(Book):
         super().__init__(title, author)
         self.file_size = file_size
 
+    def __str__(self):
+        return f"{super().__str__()}, File Size: {self.file_size} MB"
+
 # Derived Class - PrintBook
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
         super().__init__(title, author)
         self.page_count = page_count
+
+    def __str__(self):
+        return f"{super().__str__()}, Page Count: {self.page_count}"
 
 # Composition - Library
 class Library:
@@ -23,14 +32,22 @@ class Library:
         self.books = []
 
     def add_book(self, book):
-        self.books.append(book)
+        if isinstance(book, Book):
+            self.books.append(book)
+        else:
+            print("Only instances of Book, EBook, or PrintBook can be added.")
 
     def list_books(self):
         for book in self.books:
-            if isinstance(book, EBook):
-                print(f"EBook - Title: {book.title}, Author: {book.author}, File Size: {book.file_size} MB")
-            elif isinstance(book, PrintBook):
-                print(f"PrintBook - Title: {book.title}, Author: {book.author}, Page Count: {book.page_count}")
-            else:
-                print(f"Book - Title: {book.title}, Author: {book.author}")
+            print(book)
 
+# Example usage
+if __name__ == "__main__":
+    library = Library()
+    ebook = EBook("The Digital Age", "John Doe", 5)
+    printbook = PrintBook("Paper Dreams", "Jane Doe", 300)
+    
+    library.add_book(ebook)
+    library.add_book(printbook)
+    
+    library.list_books()
