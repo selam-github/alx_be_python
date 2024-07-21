@@ -1,14 +1,14 @@
-#main.py
+from polymorphism_demo import Shape, Rectangle, Circle
 
-from book_class import Book
 def main():
-  #creating instance of book
-  my_book = Book("1984","Georg Orwell",1949)
-  # Demonstrating the __str__ method
-  print(__str__(my_book))
-  # Demonstrating the __repr__ method
-  print(__repr__(my_book))
-  # Deleting a book instance to trigger __del_
-   del my_book ()
-  if __name__ == "__main__":
+    shapes = [
+        Rectangle(3, 4),
+        Circle(5)
+    ]
+
+    for shape in shapes:
+        print(f"The area of the {shape.__class__.__name__} is: {shape.area()}")
+
+if __name__ == "__main__":
     main()
+
